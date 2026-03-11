@@ -11,7 +11,8 @@
 }
 
 .content {
-  max-width: 660px;
+  max-width: var(--content-max-width, 660px);
+  transition: max-width 0.22s ease;
 }
 
 /* Typography */
@@ -27,6 +28,10 @@
   line-height: 2.1;
   color: var(--light);
   margin-bottom: 20px;
+}
+
+.pLarge {
+  font-size: 14px;
 }
 
 .p strong { color: var(--white); font-weight: 700; }
@@ -163,6 +168,14 @@
   font-weight: 700;
   color: var(--white);
   margin-bottom: 8px;
+}
+
+.workVideo {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+  border-radius: 4px;
+  background: var(--panel);
 }
 
 .workDesc {

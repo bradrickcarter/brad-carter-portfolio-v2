@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { emails } from '../data'
 import styles from './EmailList.module.css'
 
-export default function EmailList({ activeId, onSelect }) {
+export default function EmailList({ activeId, onSelect, sidebarCollapsed, onExpandSidebar }) {
   const [readIds, setReadIds] = useState([])
 
   function handleSelect(id) {
@@ -13,6 +13,9 @@ export default function EmailList({ activeId, onSelect }) {
   return (
     <div className={styles.emailList}>
       <div className={styles.header}>
+        {sidebarCollapsed && (
+          <button className={styles.expandBtn} onClick={onExpandSidebar} title="Show sidebar">›</button>
+        )}
         <span className={styles.title}>INBOX</span>
         <span className={styles.count}>{emails.length} MESSAGES</span>
       </div>

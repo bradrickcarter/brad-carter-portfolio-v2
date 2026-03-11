@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import TitleBar from './components/TitleBar'
 import Toolbar from './components/Toolbar'
 import Sidebar from './components/Sidebar'
@@ -18,16 +18,30 @@ const EMAIL_VIEWS = {
 }
 
 export default function App() {
-  const [activeEmail, setActiveEmail] = useState('about')
+  const [activeEmail, setActiveEmail] = useState('work')
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
+
+  useEffect(() => {
+    const t = setTimeout(() => setSidebarCollapsed(true), 2000)
+    return () => clearTimeout(t)
+  }, [])
 
   return (
     <div className={styles.frame}>
       <TitleBar />
       <Toolbar />
       <div className={styles.body}>
-        <Sidebar />
-        <EmailList activeId={activeEmail} onSelect={setActiveEmail} />
-        <div className={styles.detailPane}>
+        <Sidebar collapsed={sidebarCollapsed} onToggle={() => setSidebarCollapsed(v => !v)} />
+        <EmailList
+          activeId={activeEmail}
+          onSelect={setActiveEmail}
+          sidebarCollapsed={sidebarCollapsed}
+          onExpandSidebar={() => setSidebarCollapsed(false)}
+        />
+        <div
+          className={styles.detailPane}
+          style={{ '--content-max-width': sidebarCollapsed ? 'none' : '660px' }}
+        >
           {EMAIL_VIEWS[activeEmail]}
         </div>
       </div>

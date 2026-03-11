@@ -12,11 +12,11 @@ export default function ContactEmail() {
       <div className={styles.body}>
         <div className={styles.content}>
           <p className={styles.greeting}>Hey —</p>
-          <p className={styles.p}>
+          <p className={`${styles.p} ${styles.pLarge}`}>
             I'm currently open to <strong>Senior Product Designer roles in the DFW area.</strong>{' '}
             If you're building something interesting, I'd genuinely love to hear about it.
           </p>
-          <p className={styles.p}>
+          <p className={`${styles.p} ${styles.pLarge}`}>
             I work best in places where design has a real seat at the table — where I can go deep on
             the problem, stay close to users, and collaborate tightly with engineering from day one.{' '}
             <em>Titles matter less than the work.</em>

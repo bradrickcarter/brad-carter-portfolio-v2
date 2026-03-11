@@ -13,17 +13,17 @@ export default function AboutEmail() {
       <div className={styles.body}>
         <div className={styles.content}>
           <p className={styles.greeting}>Hey —</p>
-          <p className={styles.p}>
+          <p className={`${styles.p} ${styles.pLarge}`}>
             Good question. I'm <strong>Brad Carter</strong> — a Senior Product Designer based in{' '}
             <strong>Dallas / Fort Worth, TX</strong>. I've spent the last 15+ years turning{' '}
             <em>complex, messy problems</em> into experiences that feel simple and obvious in hindsight.
           </p>
-          <p className={styles.p}>
+          <p className={`${styles.p} ${styles.pLarge}`}>
             I'm equally at home in Figma sketching flows at 7am or writing the front-end code to bring
             the thing to life by EOD. I've led teams, run discovery workshops with C-suite stakeholders,
             shipped design systems, and somehow still find all of it genuinely interesting.
           </p>
-          <p className={styles.p}>
+          <p className={`${styles.p} ${styles.pLarge}`}>
             Currently a <strong>Principal Consultant at Slalom</strong>, where I've been for 11 years
             across healthcare, fintech, and enterprise SaaS. I manage a small team of designers and stay
             close to the work — I'm not a "hands-off" design lead.

@@ -10,7 +10,7 @@
 }
 
 .btn {
-  font-family: 'Space Mono', monospace;
+  font-family: "JetBrains Mono", "JetBrains Mono Fallback", monospace;
   font-size: 10px;
   letter-spacing: 0.08em;
   color: var(--mid);
@@ -41,7 +41,7 @@
 .search {
   background: var(--panel);
   border: 1px solid var(--border);
-  font-family: 'Space Mono', monospace;
+  font-family: "JetBrains Mono", "JetBrains Mono Fallback", monospace;
   font-size: 10px;
   color: var(--mid);
   padding: 4px 10px;
