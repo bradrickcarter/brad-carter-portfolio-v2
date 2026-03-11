@@ -1,0 +1,54 @@
+/* ── DESIGN TOKENS ── */
+:root {
+  --black:   #0C0C0C;
+  --dark:    #131313;
+  --panel:   #1A1A1A;
+  --panel2:  #1F1F1F;
+  --border:  #2A2A2A;
+  --border2: #333;
+  --muted:   #444;
+  --mid:     #666;
+  --light:   #999;
+  --bright:  #C8C8C8;
+  --white:   #EBEBEB;
+  --green:   #05d9e8;
+  --yellow:  #FCD34D;
+  --pink:    #F472B6;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body, #root { height: 100%; overflow: hidden; }
+
+body {
+  font-family: 'Space Mono', monospace;
+  background: linear-gradient(135deg, #1E1E1E 0%, #2EC0C6 100%);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* ── SCANLINES ── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.06) 2px,
+    rgba(0, 0, 0, 0.06) 4px
+  );
+  pointer-events: none;
+  z-index: 9990;
+}
+
+/* ── SCROLLBARS ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border2); }
+
+/* ── ANIMATIONS ── */
+@keyframes blink { 50% { opacity: 0; } }

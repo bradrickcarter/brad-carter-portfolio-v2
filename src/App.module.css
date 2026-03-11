@@ -1,0 +1,22 @@
+.frame {
+  width: min(1200px, 96vw);
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border2);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.detailPane {
+  flex: 1;
+  overflow: hidden;
+  background: var(--black);
+}
