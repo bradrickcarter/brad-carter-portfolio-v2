@@ -20,23 +20,31 @@ const EMAIL_VIEWS = {
 export default function App() {
   const [activeEmail, setActiveEmail] = useState('work')
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
+  const [inboxOpen, setInboxOpen] = useState(false)
 
   useEffect(() => {
     const t = setTimeout(() => setSidebarCollapsed(true), 2000)
     return () => clearTimeout(t)
   }, [])
 
+  function handleSelect(id) {
+    setActiveEmail(id)
+    setInboxOpen(false)
+  }
+
   return (
     <div className={styles.frame}>
-      <TitleBar />
+      <TitleBar onMenuClick={() => setInboxOpen(v => !v)} />
       <Toolbar />
       <div className={styles.body}>
         <Sidebar collapsed={sidebarCollapsed} onToggle={() => setSidebarCollapsed(v => !v)} />
         <EmailList
           activeId={activeEmail}
-          onSelect={setActiveEmail}
+          onSelect={handleSelect}
           sidebarCollapsed={sidebarCollapsed}
           onExpandSidebar={() => setSidebarCollapsed(false)}
+          mobileOpen={inboxOpen}
+          onMobileClose={() => setInboxOpen(false)}
         />
         <div
           className={styles.detailPane}

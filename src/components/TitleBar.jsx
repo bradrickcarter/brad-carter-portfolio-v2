@@ -1,6 +1,6 @@
 import styles from './TitleBar.module.css'
 
-export default function TitleBar() {
+export default function TitleBar({ onMenuClick }) {
   return (
     <div className={styles.titleBar}>
       <div className={styles.winBtns}>
@@ -11,6 +11,9 @@ export default function TitleBar() {
       <div className={styles.label}>
         BradMail — <span>brad@bradcarter.design</span>
       </div>
+      <button className={styles.menuBtn} onClick={onMenuClick} aria-label="Toggle inbox">
+        ☰
+      </button>
     </div>
   )
 }

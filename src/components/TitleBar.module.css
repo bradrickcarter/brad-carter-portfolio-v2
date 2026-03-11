@@ -36,3 +36,35 @@
 .label span {
   color: var(--white);
 }
+
+.menuBtn {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 14px;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  flex-shrink: 0;
+  transition: color 0.12s, background 0.12s;
+}
+
+.menuBtn:hover {
+  background: var(--panel);
+  color: var(--white);
+}
+
+@media (max-width: 640px) {
+  .menuBtn {
+    display: flex;
+  }
+
+  .label {
+    flex: unset;
+    margin-left: 12px;
+  }
+}
