@@ -127,3 +127,33 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+/* ── MOBILE DRAWER ── */
+.backdrop {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .emailList {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 500;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.6);
+  }
+
+  .emailList.mobileOpen {
+    transform: translateX(0);
+  }
+
+  .backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 499;
+    background: rgba(0, 0, 0, 0.5);
+  }
+}

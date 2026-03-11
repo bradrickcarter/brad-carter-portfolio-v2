@@ -57,3 +57,11 @@ img, video {
 
 /* ── ANIMATIONS ── */
 @keyframes blink { 50% { opacity: 0; } }
+
+/* ── MOBILE ── */
+@media (max-width: 640px) {
+  body {
+    padding: 0;
+    align-items: stretch;
+  }
+}
