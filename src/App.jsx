@@ -18,7 +18,7 @@ const EMAIL_VIEWS = {
 }
 
 export default function App() {
-  const [activeEmail, setActiveEmail] = useState('about')
+  const [activeEmail, setActiveEmail] = useState('work')
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
 
   useEffect(() => {
