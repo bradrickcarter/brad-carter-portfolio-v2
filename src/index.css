@@ -6,7 +6,7 @@
   --panel2:  #1F1F1F;
   --border:  #2A2A2A;
   --border2: #333;
-  --muted:   #444;
+  --muted:   #c8c8c8;
   --mid:     #666;
   --light:   #999;
   --bright:  #C8C8C8;
@@ -20,7 +20,7 @@
 html, body, #root { height: 100%; overflow: hidden; }
 
 body {
-  font-family: 'Space Mono', monospace;
+  font-family: "JetBrains Mono", "JetBrains Mono Fallback", monospace;
   background: linear-gradient(135deg, #1E1E1E 0%, #2EC0C6 100%);
   color: var(--white);
   display: flex;
@@ -43,6 +43,11 @@ body::after {
   );
   pointer-events: none;
   z-index: 9990;
+}
+
+img, video {
+  position: relative;
+  z-index: 9991;
 }
 
 /* ── SCROLLBARS ── */

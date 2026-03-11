@@ -2,11 +2,12 @@ import { useState } from 'react'
 import { sidebarMailboxes, sidebarFolders } from '../data'
 import styles from './Sidebar.module.css'
 
-export default function Sidebar() {
+export default function Sidebar({ collapsed, onToggle }) {
   const [activeItem, setActiveItem] = useState('Inbox')
 
   return (
-    <div className={styles.sidebar}>
+    <div className={`${styles.sidebar} ${collapsed ? styles.collapsed : ''}`}>
+      <button className={styles.toggleBtn} onClick={onToggle} title="Hide sidebar">‹</button>
       <div className={styles.section}>
         <div className={styles.label}>Mailboxes</div>
         {sidebarMailboxes.map(({ icon, label, badge }) => (

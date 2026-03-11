@@ -6,6 +6,35 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  transition: width 0.22s ease;
+}
+
+.sidebar.collapsed {
+  width: 0;
+  border-right: none;
+}
+
+.toggleBtn {
+  align-self: flex-end;
+  margin: 8px 8px 0;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 12px;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: color 0.12s, background 0.12s;
+}
+
+.toggleBtn:hover {
+  background: var(--panel);
+  color: var(--white);
 }
 
 .section {
