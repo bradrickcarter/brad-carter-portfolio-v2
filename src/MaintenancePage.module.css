@@ -4,17 +4,17 @@
   justify-content: center;
   min-height: 100%;
   width: 100%;
-  padding: 20px;
+  padding: 80px 150px;
 }
 
 .card {
   background: #131313;
-  border: 1px solid #2A2A2A;
+  border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 8px;
   width: 100%;
   max-width: 560px;
   overflow: hidden;
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 120px 20px rgba(0, 0, 0, 0.35);
 }
 
 /* ── Title bar ── */
